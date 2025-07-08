@@ -9,7 +9,7 @@ This is a sample end-to-end test automation framework built using Cypress and Pl
 .
 ├── cypress
 │   ├── e2e                 	# All end-to-end Cypress test cases
-│   │   └── hn_sorting.spec.js   # Main test file validating sorting logic
+│   │   └── hn_sorting.spec.js  # Main test file validating sorting logic
 │   ├── support             	# Shared Cypress & Playwright utilities
 │   │   ├── commands.js     	# Functions for article scraping and sorting
 │   │   └── selectors.js    	# Centralized page selectors for maintainability
