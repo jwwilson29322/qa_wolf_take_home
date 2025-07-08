@@ -6,7 +6,7 @@ const {
     convertToMinutes,
     isSortedDescending,
     getNextPageUrl,
-} = require('../utils/commands');
+} = require('../support/commands');
 
 /**
  * Get desired article count from env, fallback to default

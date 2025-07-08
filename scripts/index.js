@@ -5,7 +5,7 @@ const {
   convertToMinutes,
   isSortedDescending,
   getNextPageUrl,
-} = require("../utils/commands");
+} = require("../support/commands");
 
 async function sortHackerNewsArticles(limit) {
   const browser = await chromium.launch({ headless: true });
