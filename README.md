@@ -9,20 +9,20 @@ This is a sample end-to-end test automation framework built using Cypress and Pl
 .
 ├── cypress
 │   └── e2e                     # All end-to-end Cypress test cases
-│       └── hn_sorting.spec.js # Main test file validating sorting logic
-├── support                    # Shared Cypress & Playwright utilities
-│   ├── commands.js            # Functions for article scraping and sorting
-│   └── selectors.js           # Centralized page selectors for maintainability
+│       └── hn_sorting.spec.js 	# Main test file validating sorting logic
+├── support                    	# Shared Cypress & Playwright utilities
+│   ├── commands.js            	# Functions for article scraping and sorting
+│   └── selectors.js           	# Centralized page selectors for maintainability
 ├── fixtures
-│   └── hn_sorting.js          # Shared configuration variables (e.g., base URL, paths)
-├── utils (optional)           # Place for reusable helper utilities if needed
-├── index.js                   # CLI-based Playwright validation script for Hacker News
-├── cypress.config.js          # Cypress configuration
-├── playwright.config.js       # Playwright configuration
+│   └── hn_sorting.js          	# Shared configuration variables (e.g., base URL, paths)
+├── utils (optional)           	# Place for reusable helper utilities if needed
+├── index.js                   	# CLI-based Playwright validation script for Hacker News
+├── cypress.config.js          	# Cypress configuration
+├── playwright.config.js       	# Playwright configuration
 ├── package.json
 ├── .gitignore
 ├── LICENSE (optional)
-└── README.md                  # You're reading this :)
+└── README.md                  	# You're reading this :)
 ```
 
 
