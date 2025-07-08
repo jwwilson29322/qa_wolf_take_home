@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 const { chromium } = require('playwright');
-const { BASE_URL, DEFAULT_MAX_ARTICLES, NEWEST_PATH } = require('../config/fixtures');
+const { BASE_URL, DEFAULT_MAX_ARTICLES, NEWEST_PATH } = require('../fixtures/hn_sorting');
 const {
     extractArticlesFromPage,
     convertToMinutes,

@@ -1,4 +1,4 @@
-const { BASE_URL } = require("../config/fixtures");
+const { BASE_URL } = require("../fixtures/hn_sorting");
 const { ARTICLE_ROW, ARTICLE_TITLE, ARTICLE_TIME, MORE_LINK } = require("./selectors");
 
 async function extractArticlesFromPage(page) {

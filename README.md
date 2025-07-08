@@ -1,55 +1,102 @@
-# 🐺 QA Wolf Take Home Assignment
+# Cypress + Playwright Automation Framework
 
-Welcome to the QA Wolf take home assignment for our [QA Engineer](https://www.task-wolf.com/apply-qae) role! We appreciate your interest and look forward to seeing what you come up with.
-
-## Instructions
-
-This assignment has two questions as outlined below. When you are done, upload your assignment to our [application page](https://www.task-wolf.com/apply-qae):
+This is a sample end-to-end test automation framework built using Cypress and Playwright, originally created as part of a QA Engineering take-home challenge. It has been adapted to showcase a clean, modular, and maintainable structure for UI test automation.
 
 
-### Question 1
+## Folder Structure
 
-In this assignment, you will create a script on [Hacker News](https://news.ycombinator.com/) using JavaScript and Microsoft's [Playwright](https://playwright.dev/) framework. 
+```
+.
+├── cypress
+│   └── e2e                     # All end-to-end Cypress test cases
+│       └── hn_sorting.spec.js # Main test file validating sorting logic
+├── support                    # Shared Cypress & Playwright utilities
+│   ├── commands.js            # Functions for article scraping and sorting
+│   └── selectors.js           # Centralized page selectors for maintainability
+├── fixtures
+│   └── hn_sorting.js          # Shared configuration variables (e.g., base URL, paths)
+├── utils (optional)           # Place for reusable helper utilities if needed
+├── index.js                   # CLI-based Playwright validation script for Hacker News
+├── cypress.config.js          # Cypress configuration
+├── playwright.config.js       # Playwright configuration
+├── package.json
+├── .gitignore
+├── LICENSE (optional)
+└── README.md                  # You're reading this :)
+```
 
-1. Install node modules by running `npm i`.
 
-2. Edit the `index.js` file in this project to go to [Hacker News/newest](https://news.ycombinator.com/newest) and validate that EXACTLY the first 100 articles are sorted from newest to oldest. You can run your script with the `node index.js` command.
 
-Note that you are welcome to update Playwright or install other packages as you see fit, however you must utilize Playwright in this assignment.
+## Features
 
-### Question 2
+Cypress for UI test automation with reusable utilities
 
-Why do you want to work at QA Wolf? Please record a short, ~2 min video using [Loom](https://www.loom.com/) that includes:
+Playwright for CLI and formal test suite validations
 
-1. Your answer 
+Modular utility structure for article extraction and sorting logic
 
-2. A walk-through demonstration of your code, showing a successful execution
+Three test scenarios implemented with Playwright:
 
-The answer and walkthrough should be combined into *one* video, and must be recorded using Loom as the submission page only accepts Loom links.
+✅ Sorting verification of newest articles
 
-## Frequently Asked Questions
+📉 Fewer than expected articles
 
-### What is your hiring process? When will I hear about next steps?
+🕓 Articles missing time metadata
 
-This take home assignment is the first step in our hiring process, followed by a final round interview if it goes well. **We review every take home assignment submission and promise to get back to you either way within two weeks (usually sooner).** The only caveat is if we are out of the office, in which case we will get back to you when we return. If it has been more than two weeks and you have not heard from us, please do follow up.
+Easy to scale and maintain
 
-The final round interview is a 2-hour technical work session that reflects what it is like to work here. We provide a $150 stipend for your time for the final round interview regardless of how it goes. After that, there may be a short chat with our director about your experience and the role.
+Compatible with GitHub Actions or other CI tools
 
-Our hiring process is rolling where we review candidates until we have filled our openings. If there are no openings left, we will keep your contact information on file and reach out when we are hiring again.
 
-### Having trouble uploading your assignment?
-Be sure to delete your `node_modules` file, then zip your assignment folder prior to upload. 
+## How to Install & Run
 
-### How do you decide who to hire?
+```
+npm install
+npx cypress open           # Run Cypress tests via UI
 
-We evaluate candidates based on three criteria:
+node index.js [limit]      # Run Playwright CLI script 		(default: 100 articles)
 
-- Technical ability (as demonstrated in the take home and final round)
-- Customer service orientation (as this role is customer facing)
-- Alignment with our mission and values (captured [here](https://qawolf.notion.site/Mission-and-Values-859c7d0411ba41349e1b318f4e7abc8f))
+npx playwright test        # Run Playwright test suite 		(default: 100 articles)
+$env:ARTICLE_LIMIT=30 npx playwright test --reporter=html   	(override article limit)
 
-This means whether we hire you is based on how you do during our interview process, not on your previous experience (or lack thereof). Note that you will also need to pass a background check to work here as our customers require this.
+npx playwright show-report # Open test html report
+```
 
-### How can I help my application stand out?
 
-We've found that our best hires have been the most enthusiastic throughout our process. If you are very excited about working here, please feel free to go above and beyond on this assignment.
+## About This Project
+
+This framework was built to demonstrate core test automation skills including:
+
+Working with dynamic web content
+
+Verifying sorting behavior of paginated articles
+
+Handling missing or malformed article data
+
+Writing CLI and formal test cases using Playwright
+
+Structuring reusable utility functions
+
+Using Cypress for robust UI testing with modular test files and selectors
+
+
+## Cypress Test Overview
+
+This Cypress spec loads the Hacker News newest page and runs validations using custom commands in support/commands.js. The selectors used are managed centrally in support/selectors.js for maintainability.
+
+Test structure includes:
+
+Navigating through multiple pages
+
+Extracting article timestamps
+
+Verifying sorting order
+
+
+## Author
+
+Jeff Wilson
+
+Test Automation Engineer
+
+https://www.linkedin.com/in/jw-wilson/
