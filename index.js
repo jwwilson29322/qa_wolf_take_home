@@ -1,11 +1,11 @@
 const { chromium } = require("playwright");
-const { BASE_URL, NEWEST_PATH, DEFAULT_MAX_ARTICLES } = require("../fixtures/hn_sorting");
+const { BASE_URL, NEWEST_PATH, DEFAULT_MAX_ARTICLES } = require("./cypress/fixtures/hn_sorting");
 const {
   extractArticlesFromPage,
   convertToMinutes,
   isSortedDescending,
   getNextPageUrl,
-} = require("../support/commands");
+} = require("./cypress/support/commands");
 
 async function sortHackerNewsArticles(limit) {
   const browser = await chromium.launch({ headless: true });
